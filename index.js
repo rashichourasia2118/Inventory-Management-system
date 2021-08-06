@@ -1,15 +1,7 @@
 const express = require('express');
-// const session = require('express-session')
-// const expressLayout = require('express-ejs-layouts')
-// const path = require('path')
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-// const { closeAll } = require('noty');  
  const app = express();
-// const mongoose = require('mongoose')
-// const bcrypt = require('bcrypt')
-// const passport = require('passport')
-// const moment = require('moment')
 app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
@@ -47,8 +39,4 @@ app.get('/',(req,res)=>{
     return res.redirect('home.html');
 }).listen(3000);
 console.log("listening on port 3000")
-// session
-
-// const flash = require('express-flash')
-// const MongoDbStore = require('connect-mongodb-session')(session) 
 

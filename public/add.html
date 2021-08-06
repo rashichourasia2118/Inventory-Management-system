@@ -32,22 +32,16 @@
           </li>
        </ul>
     </nav>
-     <!--add product section-->
      <div class="col-md-8">
-        <!--alert to tell products added-->
         <div id="successProductAlert" class="alert alert-warning" role="alert">
-            <!-- Product added successfuly! -->
+            Product added successfuly!
         </div> 
         <form>
             <div class="form-group">
                 <label for="productName">Product Name</label>
                 <input onkeyup="disableBtn()" id='productName' type="text" class="form-control">
             </div>
-            <!-- <div class="form-group">
-                <label for="productImg">Upload Product Img</label>
-                <input onkeyup="disableBtn()" id='productImg' type="file" multiple="false" accept="image/*"
-                    class="form-control" onchange="uploaded(this.value)">
-            </div> -->
+            
             <div class="form-group">
                 <label for="productText">Product Description</label>
                 <textarea onkeyup="disableBtn()" id='productDesc' class="form-control" rows="3"></textarea>
@@ -63,7 +57,6 @@
         </form>
         <button id='productBtn' type="submit" class="btn btn-primary">Add product</button>
     </div>
-    <!--end product section-->
     <section class="my-5">
         <div class="container">
             <h2 id="productHeadline">Our Products</h2>

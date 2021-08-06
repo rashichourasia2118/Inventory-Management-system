@@ -10,12 +10,10 @@ var formControl = document.getElementsByClassName('form-control');
 var myClose = document.getElementsByClassName('myClose');
 var mySearchInp = document.getElementById('mySearchInp');
 var productHeadline = document.getElementById('productHeadline');
-//var viewBtn = document.getElementById('viewBtn');
 var successProductAlert = document.getElementById('successProductAlert');
 var dataRow = document.getElementById('dataRow');
 var productContainer;
 var currentIndex = 0;
-//check for local storage at begining
 if (localStorage.getItem('productsStorage') == null) {
     productContainer = [];
     productHeadline.style.display = 'none';
@@ -24,7 +22,6 @@ if (localStorage.getItem('productsStorage') == null) {
     productContainer = JSON.parse(localStorage.getItem('productsStorage'));
     showProducts();
 }
-//check for empty fields to disable button
 disableBtn();
 
 productBtn.addEventListener('click', function () {
@@ -46,12 +43,10 @@ function showAlert() {
         $(successProductAlert).fadeOut(2000);
     });
 }
-//if (productName.value == '' && productDesc.value == '' && productModel.value == '' && productPrice.value == '')
 function disableBtn() {
     for (var i = 0; i < formControl.length - 1; i++) {
         if (formControl[i].value == '') {
             productBtn.disabled = true;
-            //console.log('empty');
         } else {
             productBtn.removeAttribute('disabled');
         }
@@ -62,7 +57,6 @@ function addProducts() {
 
     var products = {
         productName: productName.value,
-        // productImg: productImg.value,
         productDesc: productDesc.value,
         productModel: productModel.value,
         productPrice: productPrice.value
@@ -80,14 +74,12 @@ function showProducts() {
         rows += '<div class="col-lg-4 col-md-6 col-sm-12 my-2 products"><div class="product"><div class="card p-1 text-center m-auto" style="width: 18rem;"><div class="d-flex justify-content-between"><i class="fas fa-edit" onclick="updateProduct(' + i + ')"></i><i class="fas fa-times-circle" onclick="deleteItem(' + i + ')"></i></div><img class="img-fluid" src="public/src/img/3191.png" class="card-img-top" alt="test"><div class="card-body"><h5 class="card-title">' + productContainer[i].productName + '</h5><p class="card-text">' + productContainer[i].productDesc + '</p><a href="#" class="btn btn-primary">' + productContainer[i].productPrice + ' L.E</a></div></div></div></div>';
     }
     document.getElementById('dataRow').innerHTML = rows;
-    //console.log('show products func');
     productContainer = JSON.parse(localStorage.getItem('productsStorage'));
     productHeadline.style.display = 'block';
     searchItem.style.display = 'block';
 }
 
 function updateProduct(index) {
-    //console.log('clicked');
     productName.value = productContainer[index].productName;
     productDesc.value = productContainer[index].productDesc;
     productPrice.value = productContainer[index].productPrice;
@@ -122,7 +114,6 @@ function deleteItem(item) {
     showProducts();
 }
 mySearchInp.addEventListener('keyup', function (e) {
-    //console.log(e.target.value);
     var rows = '';
     for (var i = 0; i < productContainer.length; i++) {
         if (productContainer[i].productName.toLowerCase().includes(e.target.value.toLowerCase())) {
