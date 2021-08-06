@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="src/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" defer rel="stylesheet">
+    <link rel="stylesheet" href="src/css/all.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+</head> 
+<body>
+    <nav class="navbar">
+          
+       <ul class="ul">
+           <li id="in">
+            <a href="home.html">Inventory</a>
+           </li>
+           <li>
+               <a href="home.html">Home</a>
+           </li>
+           <li>
+               <a href="signup.html">Login</a>
+           </li>
+           <li>
+               <a href="add.html">Add Product</a>
+           </li>
+           <li class="search " >
+            <a><input class="input" type="search" name="search" id="search" placeholder="Search profile" onkeyup="searchFunction()"/></a>
+            <button class="btn">Search</button>
+          </li>
+       </ul>
+    </nav>
+     <!--add product section-->
+     <div class="col-md-8">
+        <!--alert to tell products added-->
+        <div id="successProductAlert" class="alert alert-warning" role="alert">
+            <!-- Product added successfuly! -->
+        </div> 
+        <form>
+            <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input onkeyup="disableBtn()" id='productName' type="text" class="form-control">
+            </div>
+            <!-- <div class="form-group">
+                <label for="productImg">Upload Product Img</label>
+                <input onkeyup="disableBtn()" id='productImg' type="file" multiple="false" accept="image/*"
+                    class="form-control" onchange="uploaded(this.value)">
+            </div> -->
+            <div class="form-group">
+                <label for="productText">Product Description</label>
+                <textarea onkeyup="disableBtn()" id='productDesc' class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="productModel">Product Model</label>
+                <input onkeyup="disableBtn()" id='productModel' type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="productPrice">Product Price</label>
+                <input onkeyup="disableBtn()" id='productPrice' type="text" class="form-control">
+            </div>
+        </form>
+        <button id='productBtn' type="submit" class="btn btn-primary">Add product</button>
+    </div>
+    <!--end product section-->
+    <section class="my-5">
+        <div class="container">
+            <h2 id="productHeadline">Our Products</h2>
+            <div id="searchItem" class="w-50 my-4">
+                <input type="text" placeholder="Search" class="form-control" id="mySearchInp">
+                <i class="fas fa-lg fa-search mySearch"></i>
+            </div>
+            <div class="row" id="dataRow">
+            </div>
+        </div> 
+    </section>
+    <script src="src/js/jquery-3.4.1.min.js"></script>
+    <script src="src/js/popper.min.js"></script>
+    <script src="src/js/bootstrap.min.js"></script>
+    <script src="src/js/script.js" defer ></script>
+
+</body>
+</html>
